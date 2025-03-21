@@ -3,6 +3,10 @@
 ## Fork notes
 This is a fork of the OpenAI Python API library version `v1.65.4`. I have added `top_k` and `repetition_penalty` parameters to the completion request. The
 
+Installation:
+```
+pip install git+https://github.com/duongngyn0510/openai-python.git
+```
 The API with the new parameters is as follows:
 
 ```python
