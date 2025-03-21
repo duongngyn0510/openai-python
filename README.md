@@ -1,5 +1,31 @@
 # OpenAI Python API library
 
+## Fork notes
+This is a fork of the OpenAI Python API library version `v1.65.4`. I have added `top_k` and `repetition_penalty` parameters to the completion request. The
+
+The API with the new parameters is as follows:
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
+)
+
+chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Say this is a test",
+        }
+    ],
+    model="gpt-4o",
+    top_k=10,
+    repetition_penalty=1.06
+)
+```
+
 [![PyPI version](https://img.shields.io/pypi/v/openai.svg)](https://pypi.org/project/openai/)
 
 The OpenAI Python library provides convenient access to the OpenAI REST API from any Python 3.8+
